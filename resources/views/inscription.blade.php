@@ -1,12 +1,19 @@
 @extends('layout')
 
 @section('contenu')
-    <form action="/inscription" method="post">
-        {{ csrf_field() }}
-
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Mot de passe">
-        <input type="password" name="password_confirmation" placeholder="Mot de passe (confirmation)">
-        <input type="submit" value="M'inscrire">
+    <form>
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" id="nom" placeholder="Nom" required>
+        </div>
+        <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" class="form-control" id="prenom" placeholder="Prénom" required>
+        </div>
+        <div class="form-group">
+            <label for="prenom">Age</label>
+            <input type="number" class="form-control" id="age" value="20" min="20" max="80" required>
+        </div>
+        <button class="btn" type="submit">Envoyer</button>
     </form>
 @endsection
